@@ -1,4 +1,4 @@
-package com.example.picpay_api_desafio;
+package com.example.picpay;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

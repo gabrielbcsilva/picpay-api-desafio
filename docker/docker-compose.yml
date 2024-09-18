@@ -1,18 +1,16 @@
+version: '3.8'
 services:
-  mysql:
-    image: mysql
-    ports:
-      - "3306:3306"
-    expose:
-      - "3306"
+  postgres-db:
+    image: postgres:latest
+    container_name: postgres-db
     environment:
-      - MYSQL_USER=admin
-      - MYSQL_PASSWORD=123
-      - MYSQL_ROOT_PASSWORD=pass@123
-      - MYSQL_DATABASE=picpaydb
-
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_DB: mydatabase
+    ports:
+      - "5432:5432"
     volumes:
-      - db_data:/var/lib/mysql
+      - postgres_data:/var/lib/postgresql/data
 
 volumes:
-  db_data:
+  postgres_data:
