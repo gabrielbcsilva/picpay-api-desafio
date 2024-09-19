@@ -12,12 +12,15 @@ public class WalletType {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "description", unique = true)
     private String description;
 
     public WalletType() {
     }
 
     public WalletType(Long id, String description) {
+        this.id = id;
+        this.description = description;
     }
 
     public Long getId() {
@@ -28,7 +31,11 @@ public class WalletType {
         this.id = id;
     }
 
-  public enum Enum{
+    public String getDescription() {
+        return description;
+    }
+
+    public enum Enum{
     USER(1L,"user"),
     MERCHANT(2L,"merchant");
 
